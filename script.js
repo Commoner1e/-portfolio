@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 if (response.ok) {
-                    alert('Thank you for reaching out, Rojan! Your message has been sent successfully to your email.');
+                    alert('Thank you for reaching out, Your message has been sent successfully.');
                     this.reset();
                 } else {
                     alert('Oops! There was a problem sending your message. Please try again.');
