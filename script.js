@@ -82,15 +82,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Form Submission Handling (Formspree AJAX)
-    const contactForm = document.querySelector('form');
+    // Form Submission Handling (FormSubmit.co AJAX)
+    const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerText;
+
+            // Get form data
             const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
 
             submitBtn.innerText = 'Sending...';
             submitBtn.disabled = true;
@@ -98,14 +102,15 @@ document.addEventListener('DOMContentLoaded', function () {
             try {
                 const response = await fetch(this.action, {
                     method: 'POST',
-                    body: formData,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(data)
                 });
 
                 if (response.ok) {
-                    alert('Thank you for reaching out, Rojan! Your message has been sent successfully.');
+                    alert('Thank you for reaching out, Rojan! Your message has been sent successfully to your email.');
                     this.reset();
                 } else {
                     alert('Oops! There was a problem sending your message. Please try again.');
