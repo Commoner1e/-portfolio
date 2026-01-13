@@ -26,12 +26,15 @@ body {
     color: var(--text-white);
     line-height: 1.7;
     overflow-x: hidden;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
         radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
 }
 
-h1, h2, h3, .brand {
+h1,
+h2,
+h3,
+.brand {
     font-family: 'Outfit', sans-serif;
 }
 
@@ -95,7 +98,8 @@ nav {
     transition: var(--transition);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--text-white);
 }
 
@@ -135,6 +139,7 @@ nav {
 .hero h1 span {
     background: linear-gradient(to right, #818cf8, #10b981);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -288,7 +293,8 @@ section {
     transition: var(--transition);
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background: var(--primary);
     border-color: var(--primary);
     color: white;
@@ -397,7 +403,8 @@ form .full-width {
     grid-column: span 2;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 1.25rem;
     background: rgba(255, 255, 255, 0.03);
@@ -408,7 +415,8 @@ input, textarea {
     transition: var(--transition);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--primary);
     background: rgba(255, 255, 255, 0.06);
@@ -423,13 +431,31 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero h1 { font-size: 3.5rem; }
-    .about-grid, .featured-project, .contact-wrapper { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .about-grid,
+    .featured-project,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 2.75rem; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.75rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
