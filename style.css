@@ -2,14 +2,14 @@
 
 :root {
     --primary: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary: #0f172a;
+    --primary-light: #6366f1;
+    --secondary: #1e293b;
     --accent: #10b981;
-    --bg-dark: #0a0c14;
-    --text-white: #f8fafc;
-    --text-slate: #94a3b8;
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: #f8fafc;
+    --text-white: #0f172a;
+    --text-slate: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.05);
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -27,8 +27,8 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     background-image:
-        radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.02) 0%, transparent 40%);
 }
 
 h1,
@@ -51,6 +51,7 @@ h3,
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 /* Header & Nav */
@@ -137,7 +138,7 @@ nav {
 }
 
 .hero h1 span {
-    background: linear-gradient(to right, #818cf8, #10b981);
+    background: linear-gradient(to right, #4f46e5, #0ea5e9);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -327,13 +328,21 @@ section {
 .portfolio-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(2, 6, 23, 0.9), transparent);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     opacity: 0;
     transition: var(--transition);
+}
+
+.portfolio-overlay h3 {
+    color: #1e293b;
+}
+
+.portfolio-overlay p {
+    color: #64748b;
 }
 
 .portfolio-item:hover .portfolio-overlay {
@@ -411,10 +420,10 @@ input,
 textarea {
     width: 100%;
     padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.5);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
-    color: white;
+    color: var(--text-white);
     font-family: inherit;
     transition: var(--transition);
 }
