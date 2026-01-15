@@ -149,36 +149,5 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', reveal);
     reveal();
 
-    // Theme Toggle Logic
-    const themeBtn = document.getElementById('theme-toggle');
-    const body = document.body;
 
-    // Safety check if button exists (it should, but good practice)
-    if (themeBtn) {
-        const icon = themeBtn.querySelector('i');
-
-        // Check Local Storage or System Preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
 });
